@@ -1,6 +1,7 @@
 function lol
-  if lol
+end
 
+switch value
 end
-lol
-end
+  if ls
+  end
