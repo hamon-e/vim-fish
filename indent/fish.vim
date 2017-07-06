@@ -17,8 +17,11 @@ function! fish#Indent()
 
   if l:line =~# '\v^\s*switch>'
     let g:the_indent = 1
+    return 10
   elseif l:line =~# '\v^\s*%(begin|if|while|for|function)>'
-    let g:the_indent += 1
+    if g:the_indent > 1
+      let g:the_indent += 1
+    endif
   elseif l:line =~# '\v^\s*end>'
     if g:the_indent > 1
       let g:the_indent -= 1
